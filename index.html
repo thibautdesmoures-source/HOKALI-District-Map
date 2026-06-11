@@ -95,7 +95,7 @@
 <script>
 var CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQWrjGxqYAmbpHLz7nPTQyYIiy69sSdRkGCtEu8v16X48Ih4cjCX46w8hHSsXI_PsRp0t6gVQMg3XBt/pub?gid=595381660&single=true&output=csv';
 var CA_AREAS = ['los angeles','san francisco bay area','california others','fresno','modesto','sacramento','san diego'];
-var GEO_CACHE_KEY = 'hokali_geo_cache_v1';
+var GEO_CACHE_KEY = 'hokali_geo_cache_v3';
 
 var ADDRESSES = {'Moreno Valley Unified School District':'25634 Alessandro Blvd, Moreno Valley, CA 92553','Temecula Valley Unified School District':'31350 Rancho Vista Rd, Temecula, CA 92592','Eastside Union School District':'45012 Sierra Hwy, Lancaster, CA 93534','Corona Norco Unified School District':'2820 Clark Ave, Norco, CA 92860','Dublin Unified School District':'7471 Larkdale Ave, Dublin, CA 94568','Val Verde Unified School District':'975 W Morgan St, Perris, CA 92571','San Francisco Unified School District':'555 Franklin St, San Francisco, CA 94102','Los Angeles Unified School District':'333 S Beaudry Ave, Los Angeles, CA 90017','Oakland Unified School District':'1000 Broadway, Oakland, CA 94607','Alum Rock Unified School District':'2930 Gay Ave, San Jose, CA 95127','Amethod Public Schools':'2023 Broadway, Oakland, CA 94612','Cowchilla Elementary School District':'740 W Drove Ave, Chowchilla, CA 93610','West Contra Costa Unified School District':'1108 Bissell Ave, Richmond, CA 94801','Valor Academy Elementary':'13000 Raymer St, North Hollywood, CA 91605','Tustin Unified School District':'300 S C St, Tustin, CA 92780','Sunnyvale School District':'819 W Iowa Ave, Sunnyvale, CA 94086','Dinuba Unified School District':'1327 E El Monte Way, Dinuba, CA 93618','Education For Change Public Schools':'1970 Broadway, Suite 240, Oakland, CA 94612','Fremont Unified School District':'4210 Technology Dr, Fremont, CA 94538','Morgan Hill Unified School District':'15600 Concord Circle, Morgan Hill, CA 95037','Fullerton Unified School District':'1401 W Valencia Dr, Fullerton, CA 92833','Hayward Unified School District':'24411 Amador St, Hayward, CA 94544','John Swett Unified School District':'400 Alhambra Ave, Martinez, CA 94553','KIPP Heritage Academy':'375 N White Rd, San Jose, CA 95127','KIPP Empower Academy':'2812 S Hoover St, Los Angeles, CA 90007','Livermore Valley Joint Unified School District':'685 E Jack London Blvd, Livermore, CA 94551','Mill Valley Elementary School District':'411 Sycamore Ave, Mill Valley, CA 94941','Mountain View School District':'3320 Gilman Rd, El Monte, CA 91732','Mt. Diablo Unified School District':'1936 Carlotta Dr, Concord, CA 94519','Mt. Pleasant Elementary School District':'3210 McKee Rd, San Jose, CA 95127','Natomas Unified School District':'1901 Arena Blvd, Sacramento, CA 95834','Oceanside Unified School District':'2111 Mission Ave, Oceanside, CA 92058','Pacifica School District':'375 Reina Del Mar Ave, Pacifica, CA 94044','Magnolia Public Schools':'17355 Chatsworth St, Granada Hills, CA 91344','Palmdale School District':'39139 N 10th St E, Palmdale, CA 93550','Rosemead School District':'3907 Rosemead Blvd, Rosemead, CA 91770','Pasadena Unified School District':'351 S Hudson Ave, Pasadena, CA 91101','San Bruno Park School District':'500 Acacia Ave, San Bruno, CA 94066','San Diego Unified School District':'4100 Normal St, San Diego, CA 92103','San Jose Unified School District':'855 Lenzen Ave, San Jose, CA 95126','San Mateo-Foster City School District':'1170 Chess Dr, Foster City, CA 94404','Caliber Public Schools':'1220 Valle Vista Ave, Vallejo, CA 94589','VAUGHN Next Century Learning Center':'13330 Vaughn St, San Fernando, CA 91340','Westminster School District':'14121 Cedarwood Ave, Westminster, CA 92683','Fresno Unified School District':'2309 Tulare St, Fresno, CA 93721','Ventura Unified School District':'255 W Stanley Ave, Ventura, CA 93001','Lemon Grove School District':'8025 Lincoln St, Lemon Grove, CA 91945','Fairfield-Suisun Unified School District':'2490 Hilborn Rd, Fairfield, CA 94534','Adelanto Elementary School District':'11824 Air Expressway, Adelanto, CA 92301','Albert Einstein Academies':'4343 Campus Ave, San Diego, CA 92103','Fresno County Superintendent of Schools':'1111 Van Ness Ave, Fresno, CA 93721','Vallejo City Unified School District':'665 Walnut Ave, Vallejo, CA 94592','Soledad Unified School District':'1261 Metz Rd, Soledad, CA 93960','Firebaugh-Las Deltas Unified School District':'1976 Morris Kyle Dr, Firebaugh, CA 93622','ABC Unified School District':'16700 Norwalk Blvd, Cerritos, CA 90703','Monterey Peninsula Unified School District':'700 Pacific St, Monterey, CA 93940','Empire Union School District':'116 N McClure Rd, Modesto, CA 95357','Chula Vista Elementary School District':'84 E J St, Chula Vista, CA 91910','Western Placer Unified School District':'600 6th St, Lincoln, CA 95648','Twin Rivers Unified School District':'5115 Dudley Blvd, McClellan, CA 95652','Elk Grove Unified School District':'9510 Elk Grove-Florin Rd, Elk Grove, CA 95624','Glendora Unified School District':'500 N Loraine Ave, Glendora, CA 91741','Inglewood Unified School District':'401 S Inglewood Ave, Inglewood, CA 90301','ISANA Academies':'14709 Polk St, Sylmar, CA 91342','Alvord Unified School District':'9 MacKay Ct, Riverside, CA 92507','Bellflower Unified School District':'16703 S Clark Ave, Bellflower, CA 90706','Shiloh Elementary School District':'3765 Shiloh Rd, Redding, CA 96002','Murrieta Valley Unified School District':'41870 McAlby Ct, Murrieta, CA 92562','Visalia Unified School District':'5000 W Cypress Ave, Visalia, CA 93277','San Juan Unified School District':'3738 Walnut Ave, Carmichael, CA 95608','Stockton Unified School District':'701 N Madison St, Stockton, CA 95202','Compton Unified School District':'501 S Santa Fe Ave, Compton, CA 90221','Torrance Unified School District':'2335 Plaza Del Amo, Torrance, CA 90501','Campbell Union School District':'155 N 3rd St, Campbell, CA 95008','Aspire Public Schools LA':'1231 E 46th St, Los Angeles, CA 90011','Greenfield Union School District':'1624 Fairview Rd, Bakersfield, CA 93307','Cuyama Joint Unified School District':'4400 Primero School Rd, New Cuyama, CA 93254','Goleta Union School District':'401 N Fairview Ave, Goleta, CA 93117','Rim of the World Unified School District':'27315 N Bay Rd, Blue Jay, CA 92317','Rio School District':'1760 Cesar Chavez Dr, Oxnard, CA 93030','Tehachapi Unified School District':'300 S Robinson St, Tehachapi, CA 93561','South Whittier School District':'14114 Cowan Ave, Whittier, CA 90604','Strawberry Recreation Center':'118 E Strawberry Dr, Mill Valley, CA 94941','Town of San Anselmo':'525 San Anselmo Ave, San Anselmo, CA 94960','Reed Union School District':'277 Happy Hill Rd, Tiburon, CA 94920','Aromas-San Juan Unified School District':'491 A St, San Juan Bautista, CA 95045'};
 
@@ -192,7 +192,7 @@ var COORDS_RAW = [
   ["Stockton Unified School District",37.9577,-121.2908,"San Joaquin County"],
   ["Compton Unified School District",33.8958,-118.2201,"Los Angeles County"],
   ["Torrance Unified School District",33.8358,-118.3406,"Los Angeles County"],
-  ["Del Norte County School District",41.7558,-124.2014,"Del Norte County"]
+  ["Eureka Unified School District",38.7521,-121.2308,"Placer County"]
 ];
 
 var FALLBACK_RAW = [
@@ -283,7 +283,7 @@ var FALLBACK_RAW = [
   ["Stockton Unified School District",37.9577,-121.2908,"San Joaquin County","Thibaut","Inactive - lead in conv"],
   ["Compton Unified School District",33.8958,-118.2201,"Los Angeles County","Thibaut","Inactive - lead in conv"],
   ["Torrance Unified School District",33.8358,-118.3406,"Los Angeles County","Santi","Inactive - lead in conv"],
-  ["Del Norte County School District",41.7558,-124.2014,"Del Norte County","","Inactive - lead in conv"]
+  ["Eureka Unified School District",38.7521,-121.2308,"Placer County","","Inactive - lead in conv"]
 ];
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
@@ -337,9 +337,9 @@ function findCoords(name) {
 function buildFromCSV(rows) {
   var known=[], unmatched=[], seen={};
   rows.slice(1).forEach(function(row){
-    if(row.length<6) return;
+    if(row.length<7) return;
     var name=(row[0]||'').trim(), area=(row[2]||'').trim().toLowerCase();
-    var county=(row[3]||'').trim(), ae=(row[4]||'').trim(), status=(row[5]||'').trim();
+    var county=(row[3]||'').trim(), address=(row[4]||'').trim(), ae=(row[5]||'').trim(), status=(row[6]||'').trim();
     if(CA_AREAS.indexOf(area)<0) return;
     var sk=getStatusKey(status); if(!sk) return;
     if(seen[norm(name)]) return; seen[norm(name)]=true;
@@ -349,12 +349,12 @@ function buildFromCSV(rows) {
     } else {
       // Check geo cache
       var cache=loadGeoCache();
-      if(cache[name]){
-        var coords=cache[name];
+      var cacheKey=address||name; if(cache[cacheKey]){
+        var coords=cache[cacheKey];
         COORDS[norm(name)]={lat:coords.lat,lng:coords.lng,county:county,name:name};
         known.push({name:name,lat:coords.lat,lng:coords.lng,county:county,ae:ae,aeKey:getAEKey(ae),statusKey:sk});
       } else {
-        unmatched.push({name:name,county:county,ae:ae,statusKey:sk});
+        unmatched.push({name:name,address:address,county:county,ae:ae,statusKey:sk});
       }
     }
   });
@@ -435,14 +435,14 @@ function geocodeNext(items, idx) {
   document.getElementById('geoBar').style.display = 'block';
   document.getElementById('geoBar').textContent = '&#128205; Locating ' + remaining + ' new district' + (remaining>1?'s':'') + '…';
 
-  var url = 'https://nominatim.openstreetmap.org/search?q=' + encodeURIComponent(item.name + ' California') + '&format=json&limit=1&countrycodes=us';
+  var geocodeQuery = item.address ? item.address : (item.name + ' California'); var url = 'https://nominatim.openstreetmap.org/search?q=' + encodeURIComponent(geocodeQuery) + '&format=json&limit=1&countrycodes=us';
   fetch(url)
     .then(function(r){ return r.json(); })
     .then(function(data){
       if (data && data[0]) {
         var lat=parseFloat(data[0].lat), lng=parseFloat(data[0].lon);
         // Save to cache
-        var cache=loadGeoCache(); cache[item.name]={lat:lat,lng:lng}; saveGeoCache(cache);
+        var cache=loadGeoCache(); cache[item.address||item.name]={lat:lat,lng:lng}; saveGeoCache(cache);
         // Add to COORDS and districts
         COORDS[norm(item.name)]={lat:lat,lng:lng,county:item.county,name:item.name};
         if (!districts.some(function(d){return d.name===item.name;})) {
